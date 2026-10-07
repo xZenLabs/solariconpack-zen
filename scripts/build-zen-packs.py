@@ -20,109 +20,107 @@ ROOT = Path(__file__).resolve().parents[1]
 MAX_FILE_SIZE = 5 * 1024 * 1024
 Image.MAX_IMAGE_PIXELS = 12 * 1024 * 1024
 SIMPLEUI_NAMES = {
-    "sui_menu": "menu",
-    "sui_search": "search",
-    "sui_back": "chevron_left",
+    "sui_menu": "app_menu",
+    "sui_search": "quick_search",
+    "sui_back": "tab_left",
     "sui_browse_normal": "folder",
-    "sui_browse_author": "authors",
-    "sui_browse_series": "series",
-    "sui_browse_tags": "tags",
-    "sui_pager_prev": "chevron_left",
-    "sui_pager_next": "chevron_right",
-    "sui_pager_first": "pager_first",
-    "sui_pager_last": "pager_last",
-    "sui_navpager_prev": "chevron_left",
-    "sui_navpager_next": "chevron_right",
+    "sui_browse_author": "tab_authors",
+    "sui_browse_series": "tab_series",
+    "sui_browse_tags": "tab_tags",
+    "sui_pager_prev": "tab_left",
+    "sui_pager_next": "tab_right",
+    "sui_pager_first": "chevron.first",
+    "sui_pager_last": "chevron.last",
+    "sui_navpager_prev": "tab_left",
+    "sui_navpager_next": "tab_right",
     "sui_coll_back": "coll_back",
     "sui_qa_folder": "folder",
     "sui_qa_plugin": "qa_plugin",
-    "sui_qa_system": "settings",
+    "sui_qa_system": "appbar.settings",
     "sui_qa_group": "qa_group",
     "sui_fc_empty": "folder",
-    "sui_tab_main": "menu",
-    "sui_tab_setting": "settings",
+    "sui_tab_main": "app_menu",
+    "sui_tab_setting": "appbar.settings",
     "sui_tab_tools": "tab_tools",
-    "sui_tab_search": "search",
+    "sui_tab_search": "quick_search",
     "sui_tab_fm_settings": "tab_fm_settings",
-    "sui_tab_navigation": "tab_navigation",
-    "sui_tab_typeset": "tab_typeset",
+    "sui_tab_navigation": "appbar.navigation",
+    "sui_tab_typeset": "appbar.typeset",
     "sui_tab_filebrowser": "tab_filebrowser",
-    "sui_tab_qs_panel": "tab_qs_panel",
+    "sui_tab_qs_panel": "quicksettings",
     "sui_action_library": "library",
     "sui_action_homescreen": "homescreen",
-    "sui_action_collections": "collections",
-    "sui_action_history": "history",
-    "sui_action_continue": "continue",
-    "sui_action_favorites": "favorites",
-    "sui_action_bookmark_browser": "bookmark_browser",
-    "sui_action_wifi_toggle": "wifi_toggle",
-    "sui_action_frontlight": "frontlight",
-    "sui_action_night_mode": "night_mode",
-    "sui_action_stats_calendar": "stats_calendar",
-    "sui_action_power": "power",
-    "sui_action_browse_authors": "authors",
-    "sui_action_browse_series": "series",
-    "sui_action_browse_tags": "tags",
-    "sui_action_settings": "settings",
+    "sui_action_collections": "tab_collections",
+    "sui_action_history": "tab_history",
+    "sui_action_continue": "tab_continue",
+    "sui_action_favorites": "tab_favorites",
+    "sui_action_bookmark_browser": "tab_to_be_read",
+    "sui_action_wifi_toggle": "quick_wifi",
+    "sui_action_frontlight": "lightbulb",
+    "sui_action_night_mode": "quick_nightmode",
+    "sui_action_stats_calendar": "quick_stats_calendar",
+    "sui_action_power": "quick_exit",
+    "sui_action_browse_authors": "tab_authors",
+    "sui_action_browse_series": "tab_series",
+    "sui_action_browse_tags": "tab_tags",
+    "sui_action_settings": "appbar.settings",
     "sui_action_recent": "recent",
     "sui_action_random_document": "random_document",
 }
 ALIASES = {
-    "appbar.menu": "menu",
-    "appbar.search": "search",
-    "appbar.settings": "settings",
-    "appbar.tools": "tab_tools",
-    "appbar.navigation": "tab_navigation",
-    "appbar.typeset": "tab_typeset",
     "appbar.filebrowser": "tab_filebrowser",
-    "book.opened": "continue",
-    "brightness": "frontlight",
-    "chevron.left": "chevron_left",
-    "chevron.right": "chevron_right",
-    "chevron.first": "pager_first",
-    "chevron.last": "pager_last",
+    "appbar.menu": "app_menu",
+    "appbar.rotation": "quick_rotate",
+    "appbar.search": "quick_search",
+    "appbar.tools": "tab_tools",
+    "appbar.typeset": "tab_news",
+    "back.top": "coll_back",
+    "battery": "battery_full",
+    "book.opened": "tab_continue",
+    "book_open": "tab_continue",
+    "bookmark": "tab_to_be_read",
+    "bookshelf": "library",
+    "brightness": "lightbulb",
+    "calendar": "quick_stats_calendar",
+    "chevron.left": "tab_left",
+    "chevron.right": "tab_right",
+    "close_light": "close",
+    "cloud": "quick_cloud",
+    "column.one": "align.justify",
+    "exit": "close",
+    "flame": "quick_streak",
+    "grid": "app_launcher",
     "home": "homescreen",
     "large_chevron_up": "chevron.up",
-    "lightbulb": "frontlight",
-    "lookup.ai": "ai_assistant",
-    "lookup_ai": "ai_assistant",
-    "lookup.search": "search",
-    "lookup_search": "search",
-    "lookup.vocab": "vocabulary_builder",
-    "lookup_vocab": "vocabulary_builder",
-    "quick_aa": "ai_assistant",
-    "quick_cloud": "cloud_storage",
-    "quick_crossword": "crossword",
-    "quick_exit": "power",
+    "lookup.ai": "quick_aa",
+    "lookup.dictionary": "book_closed",
+    "lookup.highlight": "lookup_highlight",
+    "lookup.search": "quick_search",
+    "lookup.vocab": "tab_vocab",
+    "lookup.vocab_remove": "lookup_vocab_remove",
+    "lookup_ai": "quick_aa",
+    "lookup_dictionary": "book_closed",
+    "lookup_search": "quick_search",
+    "lookup_vocab": "tab_vocab",
+    "move.down": "control.collapse",
+    "notice-info": "info",
+    "quick_calibre": "library",
+    "quick_calibre_dark": "library",
     "quick_filebrowser": "folder",
-    "quick_localsend": "localsend",
-    "quick_nightmode": "night_mode",
-    "quick_opds": "storefront",
-    "quick_puzzle": "sudoku",
-    "quick_rotate": "rotate",
-    "quick_screenshot": "screenshots",
-    "quick_search": "search",
+    "quick_restart": "restart",
     "quick_sleep": "sleep",
-    "quick_stats_calendar": "stats_calendar",
-    "quick_streak": "streak",
-    "quick_sync": "syncthing",
-    "quick_usb": "usb_storage",
-    "quick_wifi": "wifi_toggle",
-    "quick_zlib": "zlibrary",
-    "star.empty": "favorites",
-    "tab_authors": "authors",
-    "tab_collections": "collections",
-    "tab_exit": "power",
+    "quick_stats_progress": "tab_stats",
+    "star.empty": "tab_favorites",
+    "tab_books": "library",
+    "tab_exit": "quick_exit",
+    "tab_fm_settings": "appbar.filebrowser",
     "tab_folder": "folder",
-    "tab_history": "history",
-    "tab_left": "chevron_left",
-    "tab_manga": "rakuyomi",
-    "tab_news": "instapaper",
-    "tab_right": "chevron_right",
-    "tab_series": "series",
-    "tab_stats": "stats_calendar",
-    "tab_tags": "tags",
-    "tab_to_be_read": "bookmark_browser",
+    "tab_stats.2": "tab_stats",
+    "tab_stats.old": "tab_stats",
+    "tab_translate": "globe",
+    "wifi": "wifi.open.100",
+    "wifi.open.0": "quick_wifi",
+    "wifi.open.100": "quick_wifi",
 }
 
 
@@ -185,6 +183,10 @@ def pack_sources(root, output):
         return path != output and output not in path.parents and not any(
             part.startswith(".") or part == "dist" for part in path.relative_to(root).parts)
 
+    def icon_directories(pack):
+        children = [path for path in sorted(pack.iterdir()) if path.is_dir() and included(path)]
+        return children if any(path.name.startswith("Pack Icons") for path in children) else [pack]
+
     if (root / "pack.lua").is_file():
         yield root, [root]
         return
@@ -194,21 +196,21 @@ def pack_sources(root, output):
         for manifest in manifests:
             pack = manifest.parent
             bundle = pack.parent if pack != root and pack.name.startswith("Pack Icons") else pack
-            directories = [path for path in bundle.iterdir() if path.is_dir()] if bundle != pack else [pack]
             bundles.append(bundle)
-            yield pack, directories
+            yield pack, icon_directories(bundle)
         for child in sorted(root.iterdir()):
             if child.is_dir() and included(child) and not any(
                     child == bundle or child in bundle.parents for bundle in bundles) and any(
                     path.suffix.lower() in (".svg", ".png") for path in child.iterdir()):
                 yield child, [child]
-    elif any(path.suffix.lower() in (".svg", ".png") for path in root.iterdir()):
-        yield root, [root]
+    elif any(path.suffix.lower() in (".svg", ".png") or
+             (path.is_dir() and path.name.startswith("Pack Icons")) for path in root.iterdir()):
+        yield root, icon_directories(root)
     else:
         for child in sorted(root.iterdir()):
             if child.is_dir() and included(child) and any(
                     path.suffix.lower() in (".svg", ".png") for path in child.rglob("*")):
-                yield child, [child]
+                yield child, icon_directories(child)
 
 
 def build_pack(pack, directories, root, output, version, metadata=None):
@@ -264,8 +266,12 @@ def build_pack(pack, directories, root, output, version, metadata=None):
         else:
             source = icon(slot)
         alias(target, source)
-    for target, source in ALIASES.items():
-        alias(target, icon(source))
+    # Resolve aliases that share another generated icon's artwork.
+    previous_count = -1
+    while len(files) != previous_count:
+        previous_count = len(files)
+        for target, source in ALIASES.items():
+            alias(target, icon(source))
 
     icon_count = len(files)
     version = version or metadata.get("version") or fields.get("version")

@@ -20,6 +20,92 @@ SVG = b'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M0 
 
 
 class BuildPacksTest(unittest.TestCase):
+    def test_repository_variants_preserve_koreader_names_and_build_zen_aliases(self):
+        koreader_names = set("""
+            align.auto align.center align.justify align.left align.right appbar.contrast appbar.crop
+            appbar.filebrowser appbar.menu appbar.navigation appbar.pagefit appbar.pageview
+            appbar.pokeball appbar.rotation appbar.search appbar.settings appbar.textsize
+            appbar.tools appbar.typeset back.top back.top.rtl book.opened bookmark cancel check
+            chevron.first chevron.last chevron.left chevron.right chevron.up close column.one
+            column.three column.two control.collapse control.expand control.expand.alpha
+            cre.render.partial cre.render.ready cre.render.reload cre.render.reload.alpha
+            cre.render.working direction.BTLR direction.BTRL direction.LRBT direction.LRTB
+            direction.RLBT direction.RLTB direction.TBLR direction.TBRL dogear.abandoned
+            dogear.abandoned.rtl dogear.alpha dogear.complete dogear.complete.rtl dogear.opaque
+            dogear.reading edit exit home info move.down move.up notice-info notice-question
+            notice-warning plus position.marker position.marker.top rotation.0UR rotation.180UD
+            rotation.90CCW rotation.90CW rotation.L.0UR rotation.L.180UD rotation.L.90CCW
+            rotation.L.90CW rotation.P.0UR rotation.P.180UD rotation.P.90CCW rotation.P.90CW
+            star.empty star.full star.white texture-box triangle wifi wifi.open.0 wifi.open.100
+            wifi.open.25 wifi.open.50 wifi.open.75 wifi.secure.0 wifi.secure.100 wifi.secure.25
+            wifi.secure.50 wifi.secure.75 zoom.column zoom.content zoom.manual zoom.page zoom.row
+        """.split())
+        required = set("""
+            app_launcher app_menu book_open calendar cloud restart sleep quicksettings
+            archive atom avatar battery battery_full battery_half battery_low battery_charging
+            blocks book_closed bookshelf calculator close close_light compass coverflow cpu database
+            education flame folder folder_open globe grid grid_slide lightning
+            lookup.dictionary lookup_dictionary lookup.highlight lookup_highlight
+            lookup.vocab_remove lookup_vocab_remove more_vertical network share skip_left
+            skip_right speed sun tablet terminal timer toc usb warmth
+            appbar.menu appbar.search book.opened home library star.empty
+            quick_aa quick_battery quick_bluetooth quick_calibre quick_calibre_dark
+            quick_cloud quick_crossword quick_exit quick_filebrowser quick_incognito
+            quick_localsend quick_lockdown quick_nightmode quick_opds quick_puzzle
+            quick_restart quick_rotate quick_screenshot quick_search quick_sleep
+            quick_stats_calendar quick_stats_progress quick_streak quick_sync
+            quick_usb quick_wifi quick_zen quick_zlib
+            tab_authors tab_books tab_collections tab_continue tab_exit tab_favorites
+            tab_filebrowser tab_fm_settings tab_folder tab_history tab_left tab_manga
+            appbar.navigation appbar.typeset tab_news tab_right tab_series tab_stats
+            tab_tags tab_to_be_read tab_tools tab_translate tab_vocab
+        """.split())
+        skipped = {"quick_chess", "quick_connections", "quick_notion", "quick_quickrss",
+                   "tab_spacer"}
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary)
+            packs = list(builder.pack_sources(builder.ROOT, output))
+            self.assertEqual(len(packs), 2)
+            for pack, directories in packs:
+                with self.subTest(pack=pack):
+                    sources = {path.name: path for directory in directories
+                               for path in directory.rglob("*.svg")}
+                    metadata = json.loads((pack / "pack.json").read_text())
+                    self.assertFalse(list(pack.rglob("pack.lua")))
+                    koreader = next(directory for directory in directories
+                                    if directory.name.startswith("KOReader Icons"))
+                    self.assertEqual({path.stem for path in koreader.glob("*.svg")}, koreader_names)
+                    zen_sources = [path for path in sources.values() if path.parent != koreader]
+                    self.assertEqual(len(zen_sources), len({path.read_bytes() for path in zen_sources}))
+                    destination = builder.build_pack(pack, directories, builder.ROOT,
+                                                     output, None, metadata)
+                    with zipfile.ZipFile(destination) as archive:
+                        names = {Path(name).stem for name in archive.namelist()
+                                 if name.endswith(".svg")}
+                        self.assertFalse(required - names, sorted(required - names))
+                        self.assertFalse(skipped & names, sorted(skipped & names))
+                        prefix = destination.stem + "/"
+                        self.assertEqual(len(names), 227)
+                        self.assertFalse(any(name.endswith(".lua") for name in archive.namelist()))
+                        self.assertEqual(len(archive.namelist()), len(set(archive.namelist())))
+                        for name, path in sources.items():
+                            self.assertEqual(archive.read(prefix + name), path.read_bytes())
+                        for target, source in builder.ALIASES.items():
+                            if target + ".svg" not in sources and source in names:
+                                self.assertEqual(archive.read(prefix + target + ".svg"),
+                                                 archive.read(prefix + source + ".svg"))
+                        self.assertEqual(json.loads(archive.read(prefix + "pack.json")), metadata)
+                        self.assertFalse({"reading_progress", "zen_mode", "series", "instapaper"}
+                                         & names)
+                    with patch("sys.argv", ["build-zen-packs.py", str(pack),
+                                            "--output", str(output), "--version", "2.3.4"]):
+                        builder.main()
+                    with zipfile.ZipFile(destination) as archive:
+                        self.assertEqual(json.loads(archive.read(prefix + "pack.json")),
+                                         dict(metadata, version="2.3.4"))
+                        self.assertEqual({Path(name).stem for name in archive.namelist()
+                                          if name.endswith((".svg", ".png"))}, names)
+
     def test_repository_pack_json_metadata_and_cli_override(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

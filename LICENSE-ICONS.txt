@@ -5,14 +5,73 @@ https://creativecommons.org/licenses/by/4.0/legalcode
 
 Based on the Solar Icon Set by 480 Design:
 https://www.figma.com/community/file/1166831539721848736
+https://github.com/480-Design/Solar-Icon-Set
 
 Edited and adapted for KOReader and SimpleUI by pxlflux, including original
 icons where the Solar set did not have a suitable icon:
 https://github.com/pxlflux/solariconpack.koplugin
 
-Packaged for ZenOS by xZenLabs. The ZenOS packs preserve the source SVG
-artwork and add filename aliases for ZenOS's controls:
+Packaged for ZenOS by xZenLabs. The ZenOS packs preserve the original SVG
+artwork, adapt additional Solar designs, and generate ZenOS lookup aliases during the build:
 https://github.com/xZenLabs/solariconpack.koplugin
+
+Additional artwork adapted by xZenLabs from the official Solar Bold SVGs at
+revision 44017167688b49109d88ae6a98979b23d8950db0:
+https://github.com/480-Design/Solar-Icon-Set/tree/44017167688b49109d88ae6a98979b23d8950db0/icons/SVG/Bold
+
+  archive.svg            Notes/Archive.svg
+  atom.svg               Astronomy/Atom.svg
+  avatar.svg             Users/User Rounded.svg
+  battery_charging.svg   Essentional, UI/Battery Charge.svg
+  battery_full.svg       Essentional, UI/Battery Full.svg
+  battery_half.svg       Essentional, UI/Battery Half.svg
+  battery_low.svg        Essentional, UI/Battery Low.svg
+  blocks.svg             Essentional, UI/Box.svg
+  quick_bluetooth.svg    Electronic, Devices/Bluetooth.svg
+  book_closed.svg        School/Book.svg
+  calculator.svg         School/Calculator.svg
+  compass.svg            Map & Location/Compass.svg
+  coverflow.svg          Essentional, UI/Slider Horizontal.svg
+  cpu.svg                Electronic, Devices/CPU.svg
+  database.svg           Essentional, UI/Database.svg
+  education.svg          School/Square Academic Cap.svg
+  folder_open.svg        Folders/Folder Open.svg
+  globe.svg              Map & Location/Global.svg
+  grid_slide.svg         Files/File.svg
+  lookup_highlight.svg   Messages, Conversation/Pen 2.svg
+  quick_incognito.svg    Security/Incognito.svg
+  app_launcher.svg       Settings, Fine Tuning/Widget.svg
+  lightning.svg          Essentional, UI/Bolt.svg
+  quick_lockdown.svg     Security/Shield Keyhole.svg
+  lookup_vocab_remove.svg Essentional, UI/Minus Circle.svg
+  more_vertical.svg      Essentional, UI/Menu Dots.svg
+  network.svg            Map & Location/Globus.svg
+  restart.svg            Arrows/Restart.svg
+  share.svg              Essentional, UI/Share.svg
+  skip_left.svg          Video, Audio, Sound/Skip Previous.svg
+  skip_right.svg         Video, Audio, Sound/Skip Next.svg
+  speed.svg              Transport, Parts, Service/Spedometer Middle.svg
+  tab_stats.svg          Business, Statistic/Graph Up.svg
+  sun.svg                Weather/Sun.svg
+  tablet.svg             Electronic, Devices/Tablet.svg
+  terminal.svg           Network, IT, Programming/Code Square.svg
+  timer.svg              Time/Stopwatch.svg
+  toc.svg                List/List-1.svg
+  usb.svg                Network, IT, Programming/USB.svg
+  warmth.svg             Weather/Temperature.svg
+  quick_zen.svg          Sports/Meditation Round.svg
+
+These additions retain Solar's path geometry, centered and scaled to the
+pack's 19-unit drawing area. Colour uses the existing pastel palette and
+0.75-unit black outlines; Mono uses unfilled shapes and 1.0-unit black outlines.
+Menu Dots and Tablet are also rotated 90 degrees to match their ZenOS controls.
+
+library.svg is pxlflux's adapted bookshelf.svg, renamed for ZenOS's Library.
+tab_series.svg uses the same book paths rotated -90 degrees into a horizontal stack.
+The KOReader icon folders retain their original filenames and artwork.
+The Python builder copies these unchanged and generates additional lookup aliases
+as regular SVG files sharing the corresponding artwork without further
+modifications. No scripts or filename mapping are needed at runtime.
 
 Retain this attribution when redistributing or adapting the icons.
 Not affiliated with or endorsed by 480 Design, KOReader, or SimpleUI.
