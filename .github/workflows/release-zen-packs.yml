@@ -2,8 +2,13 @@ name: Release Zen icon packs
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: release-zen-packs
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -13,20 +18,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Select next release version
+        run: |
+          version="$(python3 scripts/next-release-version.py)"
+          echo "RELEASE_VERSION=$version" >> "$GITHUB_ENV"
+          echo "RELEASE_TAG=v$version" >> "$GITHUB_ENV"
+
+      - name: Install build dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r scripts/requirements.txt
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
 
       - name: Build and validate packs
-        run: python3 scripts/build-zen-packs.py
+        run: python3 scripts/build-zen-packs.py --version "$RELEASE_VERSION"
 
       - name: Check release version
         run: |
-          unzip -p dist/zen-solar-mono.zip zen-solar-mono/pack.json |
-            jq --exit-status --arg version "${GITHUB_REF_NAME#v}" '.version == $version'
+          for pack in dist/zen-*.zip; do
+            unzip -p "$pack" '*/pack.json' |
+              jq --exit-status --arg version "$RELEASE_VERSION" '.version == $version'
+          done
 
       - name: Publish release ZIPs
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          gh release create "$GITHUB_REF_NAME" dist/zen-solar-*.zip \
-            --verify-tag --generate-notes \
-            --title "Solar Icon Packs for ZenOS $GITHUB_REF_NAME"
+          gh release create "$RELEASE_TAG" dist/zen-*.zip \
+            --target "$GITHUB_SHA" --generate-notes \
+            --title "Icon Packs for ZenOS $RELEASE_TAG"

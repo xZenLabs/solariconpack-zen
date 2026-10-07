@@ -1,4 +1,6 @@
 .DS_Store
 ._*
 *.zip
+.venv/
+__pycache__/
 dist
