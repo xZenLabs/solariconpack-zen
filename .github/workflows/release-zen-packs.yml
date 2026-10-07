@@ -1,0 +1,32 @@
+name: Release Zen icon packs
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build and validate packs
+        run: python3 scripts/build-zen-packs.py
+
+      - name: Check release version
+        run: |
+          unzip -p dist/zen-solar-mono.zip zen-solar-mono/pack.json |
+            jq --exit-status --arg version "${GITHUB_REF_NAME#v}" '.version == $version'
+
+      - name: Publish release ZIPs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/zen-solar-*.zip \
+            --verify-tag --generate-notes \
+            --title "Solar Icon Packs for Zen UI $GITHUB_REF_NAME"

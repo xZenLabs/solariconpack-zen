@@ -51,6 +51,18 @@ The build validates the source SVGs and ZIP limits, checks archive integrity,
 and writes the packs to `dist/`. Each ZIP contains one folder matching its
 `pack.json` ID and includes [icon attribution](LICENSE-ICONS.txt).
 
+To publish a new release, update `version` in `_meta.lua` and commit the changes,
+then push a matching version tag:
+
+```sh
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+The **Release Zen icon packs** GitHub Actions workflow builds both ZIPs,
+checks that the pack version matches the tag, and creates a GitHub release
+with both assets attached.
+
 ## Install with the plugin (easiest)
 
 1. Download `solariconpack.koplugin.zip` from the [latest release](https://github.com/pxlflux/solariconpack.koplugin/releases/latest), unzip it, and copy the `solariconpack.koplugin` folder into `koreader/plugins/`. Then restart KOReader.
