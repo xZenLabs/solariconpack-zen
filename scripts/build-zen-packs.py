@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build standalone Solar icon packs for Zen UI using Python's standard library."""
+"""Build standalone Solar icon packs for ZenOS using Python's standard library."""
 
 import json
 from pathlib import Path
@@ -74,18 +74,19 @@ def main():
         metadata = {
             "schema_version": 1,
             "id": pack_id,
-            "name": f"Solar {style} for Zen UI",
+            "name": f"Solar {style} for ZenOS",
             "version": version,
             "author": "480 Design; adapted by pxlflux; packaged by xZenLabs",
         }
         files["pack.json"] = (json.dumps(metadata, indent=2) + "\n").encode()
         files["LICENSE-ICONS.txt"] = (ROOT / "LICENSE-ICONS.txt").read_bytes()
         files["README.md"] = (
-            f"# Solar {style} for Zen UI\n\n"
+            f"# Solar {style} for ZenOS\n\n"
             "Copy this folder or its ZIP into `koreader/icons/zen/`.\n"
-            "Enable Custom icons, select this pack under Custom icon pack,\n"
-            "and restart KOReader. Zen UI automatically extracts pack ZIPs.\n\n"
-            "Missing icons use Zen UI and KOReader's bundled artwork.\n"
+            "Under Zen Settings > Interface, enable Custom icons,\n"
+            "select this pack under Custom icons > Custom icon pack,\n"
+            "and restart KOReader. ZenOS automatically extracts pack ZIPs.\n\n"
+            "Missing icons use ZenOS and KOReader's bundled artwork.\n"
             "See LICENSE-ICONS.txt for attribution and licensing.\n"
         ).encode()
         assert len(files) <= 512 and sum(map(len, files.values())) <= 50 * 1024 * 1024

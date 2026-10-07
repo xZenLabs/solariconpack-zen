@@ -10,8 +10,8 @@ Edited and adapted for KOReader and SimpleUI by pxlflux, including original
 icons where the Solar set did not have a suitable icon:
 https://github.com/pxlflux/solariconpack.koplugin
 
-Packaged for Zen UI by xZenLabs. The Zen UI packs preserve the source SVG
-artwork and add filename aliases for Zen UI's controls:
+Packaged for ZenOS by xZenLabs. The ZenOS packs preserve the source SVG
+artwork and add filename aliases for ZenOS's controls:
 https://github.com/xZenLabs/solariconpack.koplugin
 
 Retain this attribution when redistributing or adapting the icons.

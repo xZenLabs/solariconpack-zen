@@ -29,4 +29,4 @@ jobs:
         run: |
           gh release create "$GITHUB_REF_NAME" dist/zen-solar-*.zip \
             --verify-tag --generate-notes \
-            --title "Solar Icon Packs for Zen UI $GITHUB_REF_NAME"
+            --title "Solar Icon Packs for ZenOS $GITHUB_REF_NAME"
