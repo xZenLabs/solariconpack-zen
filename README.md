@@ -1,4 +1,4 @@
-# Solar Icon Pack for KOReader
+# Solar Icon Pack for KOReader and Zen UI
 
 Modern, rounded replacement icons for [KOReader](https://github.com/koreader/koreader), with a full icon pack and supplementary icons for the [SimpleUI](https://github.com/doctorhetfield-cmd/simpleui.koplugin) plugin.
 
@@ -22,6 +22,34 @@ Every icon sits on the same grid with matching line weights, so everything looks
 | **Solar Mono** | Bolder outlines, 1.0 stroke | Black & white e-ink screens |
 
 <img width="2400" height="1180" alt="KOReader and SimpleUI before and after Solar" src="https://github.com/user-attachments/assets/729dc6cc-fdf3-4aba-80ab-1f95f7b59ec9" />
+
+## Install with Zen UI
+
+Download a standalone pack from [this repository's latest release](https://github.com/xZenLabs/solariconpack.koplugin/releases/latest):
+
+| Pack | Release asset |
+|---|---|
+| **Solar Colour for Zen UI** | `zen-solar-colour.zip` |
+| **Solar Mono for Zen UI** | `zen-solar-mono.zip` |
+
+1. Copy the ZIP into `koreader/icons/zen/` on your device.
+2. Enable **Custom icons**, choose the pack under **Custom icon pack**, and restart KOReader. Zen UI automatically unpacks valid ZIPs. In ZenOS, these settings are under **Zen Settings → Interface**; older Zen UI versions use **Zen UI → Extras**.
+
+Each pack includes all 160 source icons plus aliases for Zen UI's Navbar,
+quick actions, and supported lookup actions. Missing icons, including dictionary,
+highlight, translation, Wikipedia, and remove-from-vocabulary actions, use the
+bundled Zen UI and KOReader artwork. To restore the default icons, disable
+**Custom icons** or select another pack.
+
+Build both release ZIPs locally with Python 3:
+
+```sh
+python3 scripts/build-zen-packs.py
+```
+
+The build validates the source SVGs and ZIP limits, checks archive integrity,
+and writes the packs to `dist/`. Each ZIP contains one folder matching its
+`pack.json` ID and includes [icon attribution](LICENSE-ICONS.txt).
 
 ## Install with the plugin (easiest)
 
@@ -104,6 +132,7 @@ SimpleUI 2.7.1 doesn't load the Recent and Random icons from icon packs, so for 
 
 - Icons are based on the [Solar Icon Set](https://www.figma.com/community/file/1166831539721848736) by **480 Design**, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). They were edited and adapted for KOReader, and some were drawn from scratch where Solar didn't have a suitable icon.
 - The icons in this pack are also released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), and the installer plugin's code under AGPL-3.0. See [LICENSE](LICENSE).
+- Standalone Zen UI packs are packaged by [xZenLabs](https://github.com/xZenLabs) from the [pxlflux adaptation](https://github.com/pxlflux/solariconpack.koplugin), with the source artwork preserved. See [LICENSE-ICONS.txt](LICENSE-ICONS.txt).
 - Not affiliated with or endorsed by 480 Design, KOReader or SimpleUI.
 
 ## Support

@@ -1,0 +1,18 @@
+Solar icon artwork is licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Based on the Solar Icon Set by 480 Design:
+https://www.figma.com/community/file/1166831539721848736
+
+Edited and adapted for KOReader and SimpleUI by pxlflux, including original
+icons where the Solar set did not have a suitable icon:
+https://github.com/pxlflux/solariconpack.koplugin
+
+Packaged for Zen UI by xZenLabs. The Zen UI packs preserve the source SVG
+artwork and add filename aliases for Zen UI's controls:
+https://github.com/xZenLabs/solariconpack.koplugin
+
+Retain this attribution when redistributing or adapting the icons.
+Not affiliated with or endorsed by 480 Design, KOReader, or SimpleUI.
