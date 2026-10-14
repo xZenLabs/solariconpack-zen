@@ -2,7 +2,15 @@
 
 Modern, rounded replacement icons for [ZenOS](https://github.com/xZenLabs/zen-os), packaged by [ZenLabs](https://github.com/xZenLabs) from the original [Solar Icon Pack by pxlflux](https://github.com/pxlflux/solariconpack.koplugin).
 
-<img width="2400" height="1180" alt="Solar Icon Pack: Colour and Mono icons" src="https://github.com/user-attachments/assets/60011e18-b307-41fd-b141-17c4e2a54f58" />
+## Icon overviews
+
+### Solar Colour
+
+![Solar Colour: selected KOReader controls, library tabs, and common actions](.github/overview-solar-colour.png)
+
+### Solar Mono
+
+![Solar Mono: selected KOReader controls, library tabs, and common actions](.github/overview-solar-mono.png)
 
 ## What's included
 
@@ -66,17 +74,9 @@ Choose another pack under **Zen Settings → Interface → Custom icons → Cust
 
 After switching away from a pack, remove it through ZenPM if ZenPM installed it, or delete its folder from `koreader/icons/zen/` if you installed it manually.
 
-## Icon overviews
-
-### Solar Colour
-
-![Solar Colour: all source icons with filenames](Solar%20Colour/Full%20Icon%20Overview%20%28Colour%29.png)
-
-### Solar Mono
-
-![Solar Mono: all source icons with filenames](Solar%20Mono/Full%20Icon%20Overview%20%28Mono%29.png)
-
 ## Building the ZenOS packs
+
+For your own pack, start with the [Zen icon pack template](https://github.com/xZenLabs/icon-pack-template).
 
 Each pack manifest includes `"color": true` for colour artwork or
 `"color": false` for monochrome artwork. Per-style values are retained in the
