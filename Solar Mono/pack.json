@@ -3,5 +3,6 @@
   "id": "zen-solar-mono",
   "name": "Solar Mono for ZenOS",
   "version": "1.2.0",
-  "author": "480 Design; adapted by pxlflux; packaged by xZenLabs"
+  "author": "480 Design; adapted by pxlflux; packaged by xZenLabs",
+  "color": false
 }

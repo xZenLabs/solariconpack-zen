@@ -66,23 +66,21 @@ Choose another pack under **Zen Settings → Interface → Custom icons → Cust
 
 After switching away from a pack, remove it through ZenPM if ZenPM installed it, or delete its folder from `koreader/icons/zen/` if you installed it manually.
 
-## Original icon previews
+## Icon overviews
 
-<details>
-<summary><strong>Solar Colour</strong></summary>
+### Solar Colour
 
-![Solar Colour: original icons with their filenames](Solar%20Colour/Full%20Icon%20Overview%20%28Colour%29.png)
+![Solar Colour: all source icons with filenames](Solar%20Colour/Full%20Icon%20Overview%20%28Colour%29.png)
 
-</details>
+### Solar Mono
 
-<details>
-<summary><strong>Solar Mono</strong></summary>
-
-![Solar Mono: original icons with their filenames](Solar%20Mono/Full%20Icon%20Overview%20%28Mono%29.png)
-
-</details>
+![Solar Mono: all source icons with filenames](Solar%20Mono/Full%20Icon%20Overview%20%28Mono%29.png)
 
 ## Building the ZenOS packs
+
+Each pack manifest includes `"color": true` for colour artwork or
+`"color": false` for monochrome artwork. Per-style values are retained in the
+release ZIPs when building the whole repository.
 
 The KOReader icon folders retain their original lookup names and artwork;
 additional source SVGs use ZenOS lookup names. Filename conversion and alias

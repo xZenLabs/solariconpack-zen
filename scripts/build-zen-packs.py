@@ -265,6 +265,15 @@ def build_pack(pack, directories, root, output, version, metadata=None):
     metadata = dict(metadata or {})
     if pack != root:
         metadata.update(id=zen_id(display_name), name=display_name + " for ZenOS")
+        manifest = pack / "pack.json"
+        if manifest.is_file():
+            if manifest.is_symlink() or manifest.stat().st_size > 64 * 1024:
+                raise ValueError(f"Unsafe or oversized manifest: {manifest}")
+            style_metadata = json.loads(manifest.read_text())
+            if not isinstance(style_metadata, dict):
+                raise ValueError(f"{manifest}: metadata must be a JSON object")
+            if "color" in style_metadata:
+                metadata["color"] = style_metadata["color"]
     metadata.setdefault("id", zen_id(display_name))
     metadata.setdefault("name", display_name + " for ZenOS")
     metadata.setdefault("schema_version", 1)
@@ -275,6 +284,8 @@ def build_pack(pack, directories, root, output, version, metadata=None):
         raise ValueError("Pack name must be a nonempty string of at most 160 bytes")
     if type(metadata["schema_version"]) is not int or metadata["schema_version"] != 1:
         raise ValueError("Unsupported pack.json schema_version; expected 1")
+    if "color" in metadata and type(metadata["color"]) is not bool:
+        raise ValueError("pack.json color must be a boolean")
     files, sources, seen = {}, {}, set()
     canonical_names = set(SIMPLEUI_NAMES) | set(SIMPLEUI_NAMES.values()) | set(ALIASES) | set(ALIASES.values())
     for directory in directories:
@@ -390,6 +401,8 @@ def main():
             if any(key in metadata and not isinstance(metadata[key], str)
                    for key in ("id", "name", "version", "author")):
                 raise ValueError(f"{manifest}: id, name, version and author must be strings")
+            if "color" in metadata and type(metadata["color"]) is not bool:
+                raise ValueError(f"{manifest}: color must be a boolean")
         output.mkdir(parents=True, exist_ok=True)
         seen = set()
         for pack, directories in packs:
