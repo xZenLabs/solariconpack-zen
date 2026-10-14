@@ -62,6 +62,16 @@ class BuildPacksTest(unittest.TestCase):
         """.split())
         skipped = {"quick_chess", "quick_connections", "quick_notion", "quick_quickrss",
                    "tab_spacer"}
+        # ZenPM's 39 bundled SVG names and 33 inline menu names (63 unique lookups).
+        required.update("""
+            allow_updates browser categories checkmark chevron.left chevron.right chevron.up
+            clear close date debug details disable discover downgrade download downloads
+            enable filter fonts games home icon_packs ignore_updates info kindleforge media
+            open_box packages patch plugin productivity qrcode reference refresh reinstall
+            remove remove_queue scan_plugins screensaver search settings settings_advanced
+            settings_bug sort sort_asc sort_desc sources star star.filled sync_off theme
+            title uninstall unverified update upgrade utility verified wallabag wallpaper zen zenpm
+        """.split())
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary)
             packs = list(builder.pack_sources(builder.ROOT, output))
@@ -85,7 +95,7 @@ class BuildPacksTest(unittest.TestCase):
                         self.assertFalse(required - names, sorted(required - names))
                         self.assertFalse(skipped & names, sorted(skipped & names))
                         prefix = destination.stem + "/"
-                        self.assertEqual(len(names), 227)
+                        self.assertEqual(len(names), 300)
                         self.assertFalse(any(name.endswith(".lua") for name in archive.namelist()))
                         self.assertEqual(len(archive.namelist()), len(set(archive.namelist())))
                         for name, path in sources.items():

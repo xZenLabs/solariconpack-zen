@@ -6,7 +6,7 @@ Modern, rounded replacement icons for [ZenOS](https://github.com/xZenLabs/zen-os
 
 ## What's included
 
-Each built pack includes 227 SVG files named for ZenOS and KOReader's icon lookups. The KOReader icon folders retain all 102 original filenames and drawings in each style. Python generates additional ZenOS lookup aliases during the build. Matching grids and line weights keep the artwork consistent across ZenOS and KOReader. Missing icons use the bundled ZenOS and KOReader artwork.
+Each built pack includes 300 SVG files named for ZenOS, KOReader, and ZenPM's icon lookups. The KOReader icon folders retain all 102 original filenames and drawings in each style. Python generates additional ZenOS and ZenPM lookup aliases during the build. Matching grids and line weights keep the artwork consistent across the three interfaces. Missing icons use the bundled artwork.
 
 | Pack | Style | Made for | Release asset |
 |---|---|---|---|
@@ -29,6 +29,14 @@ All 23 built-in choices under **Navbar → Tabs → Add → Tab** have themed ic
 | Archive | `archive.svg` | Archive box |
 
 Calibre and `tab_books.svg` share the Library artwork. Reading progress uses `quick_stats_progress.svg`; the statistics calendar retains its calendar icon. Battery SVGs are available for controls and icon selection; ZenOS's status-bar battery indicators and other inline font glyphs use their existing font artwork.
+
+ZenPM's KOReader frontend is covered in both styles: all 39 bundled SVG names
+and 33 inline menu names (63 unique lookups). This includes navigation, all 12
+categories, package and queue actions, verification badges, source icons, search,
+filtering, sorting, and settings. ZenPM must support the selected ZenOS icon pack
+for these replacements to appear; older frontends that load bundled icons and
+font glyphs directly keep their original artwork. Downloaded package logos and
+previews retain their own artwork.
 
 Chess, Connections, Notion, RSS, and unmatched lookup actions keep the bundled artwork. The additions come from the [official Solar Icon Set](https://github.com/480-Design/Solar-Icon-Set/tree/44017167688b49109d88ae6a98979b23d8950db0/icons/SVG/Bold); source names and adaptation details are recorded in [icon attribution](LICENSE-ICONS.txt).
 

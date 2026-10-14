@@ -60,6 +60,33 @@ https://github.com/480-Design/Solar-Icon-Set/tree/44017167688b49109d88ae6a98979b
   usb.svg                Network, IT, Programming/USB.svg
   warmth.svg             Weather/Temperature.svg
   quick_zen.svg          Sports/Meditation Round.svg
+  bell.svg               Notifications/Bell.svg
+  bell_off.svg           Notifications/Bell Off.svg
+  bug.svg                Network, IT, Programming/Bug.svg
+  clapperboard.svg       Video, Audio, Sound/Clapperboard Play.svg
+  clipboard.svg          Notes/Clipboard Check.svg
+  disable.svg            Video, Audio, Sound/Pause Circle.svg
+  download.svg           Arrows Action/Download.svg
+  downloads.svg          Arrows Action/Download Twice Square.svg
+  enable.svg             Video, Audio, Sound/Play Circle.svg
+  external_link.svg      Arrows/Square Arrow Right Up.svg
+  filter.svg             Essentional, UI/Filter.svg
+  font.svg               Text Formatting/Text Square.svg
+  gallery.svg            Video, Audio, Sound/Gallery.svg
+  gamepad.svg            Electronic, Devices/Gamepad.svg
+  open_box.svg           Messages, Conversation/Inbox Out.svg
+  paint_palette.svg      Design, Tools/Palette.svg
+  patch.svg              Medicine/Adhesive Plaster 2.svg
+  qrcode.svg             Security/QR Code.svg
+  scan.svg               Security/Eye Scan.svg
+  shield_check.svg       Security/Shield Check.svg
+  shield_warning.svg     Security/Shield Warning.svg
+  sort.svg               Essentional, UI/Sort.svg
+  sort_asc.svg           List/Sort From Bottom To Top.svg
+  sort_desc.svg          List/Sort From Top To Bottom.svg
+  trash.svg              Essentional, UI/Trash Bin Trash.svg
+  tuning.svg             Settings, Fine Tuning/Tuning Square 2.svg
+  upload.svg             Arrows Action/Upload Square.svg
 
 These additions retain Solar's path geometry, centered and scaled to the
 pack's 19-unit drawing area. Colour uses the existing pastel palette and
@@ -72,6 +99,8 @@ The KOReader icon folders retain their original filenames and artwork.
 The Python builder copies these unchanged and generates additional lookup aliases
 as regular SVG files sharing the corresponding artwork without further
 modifications. No scripts or filename mapping are needed at runtime.
+ZenPM's bundled SVG names and inline menu names are included as lookup aliases;
+its frontend must resolve the selected ZenOS icon pack to display them.
 
 Retain this attribution when redistributing or adapting the icons.
 Not affiliated with or endorsed by 480 Design, KOReader, or SimpleUI.
