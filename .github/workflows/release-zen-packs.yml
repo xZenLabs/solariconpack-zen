@@ -22,6 +22,8 @@ jobs:
           fetch-depth: 0
 
       - name: Select next release version
+        env:
+          PREVIOUS_SHA: ${{ github.event.before }}
         run: |
           version="$(python3 scripts/next-release-version.py)"
           echo "RELEASE_VERSION=$version" >> "$GITHUB_ENV"

@@ -125,10 +125,13 @@ does not guarantee that an image decoder has no vulnerabilities. SVG artwork is
 validated but is not rewritten or sanitised.
 
 The release workflow runs on pushes to `main` and manually through **Actions →
-Release Zen icon packs → Run workflow**. It increments the patch number above
-the higher of root `pack.json`'s version and existing `vMAJOR.MINOR.PATCH` tags
-(for example, `1.0.0` → `v1.0.1` → `v1.0.2`). Update root `pack.json` to set a
-new major or minor baseline. Release runs are serialized to avoid duplicate tags.
+Release Zen icon packs → Run workflow**. When a push increases root `pack.json`'s
+version above its value on `main` before that push, the workflow releases that
+exact version. Otherwise, including manual workflow runs, it increments the patch
+number above the higher of root `pack.json` and existing `vMAJOR.MINOR.PATCH` tags.
+For example, a manual change from `1.2.0` to `1.3.0` releases `v1.3.0`;
+an unchanged manifest with latest tag `v1.3.0` releases `v1.3.1`.
+Release runs are serialized to avoid duplicate tags.
 The workflow builds and validates all packs with the selected version, then
 creates the tag on the triggering commit and publishes the generated ZenOS ZIPs.
 
