@@ -20,7 +20,7 @@ SVG = b'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M0 
 
 
 class BuildPacksTest(unittest.TestCase):
-    def test_repository_variants_preserve_koreader_names_and_build_zen_aliases(self):
+    def test_grouped_repository_variants_preserve_lookup_names_and_artwork(self):
         koreader_names = set("""
             align.auto align.center align.justify align.left align.right appbar.contrast appbar.crop
             appbar.filebrowser appbar.menu appbar.navigation appbar.pagefit appbar.pageview
@@ -78,15 +78,19 @@ class BuildPacksTest(unittest.TestCase):
             self.assertEqual(len(packs), 2)
             for pack, directories in packs:
                 with self.subTest(pack=pack):
-                    sources = {path.name: path for directory in directories
-                               for path in directory.rglob("*.svg")}
+                    paths = [path for directory in directories
+                             for path in directory.rglob("*.svg")]
+                    sources = {path.name: path for path in paths}
                     metadata = json.loads((pack / "pack.json").read_text())
                     self.assertFalse(list(pack.rglob("pack.lua")))
-                    koreader = next(directory for directory in directories
-                                    if directory.name.startswith("KOReader Icons"))
-                    self.assertEqual({path.stem for path in koreader.glob("*.svg")}, koreader_names)
-                    zen_sources = [path for path in sources.values() if path.parent != koreader]
-                    self.assertEqual(len(zen_sources), len({path.read_bytes() for path in zen_sources}))
+                    self.assertEqual(len(paths), len(sources))
+                    self.assertEqual(len(sources), 298)
+                    self.assertEqual({path.parent.parent for path in paths}, {pack})
+                    self.assertEqual({path.stem for path in (pack / "koreader").glob("*.svg")},
+                                     koreader_names | {"book_open"})
+                    self.assertFalse({"qa_group.svg", "qa_plugin.svg"} & sources.keys())
+                    for shield in ("shield_check.svg", "shield_warning.svg"):
+                        self.assertTrue((pack / "zenpm" / shield).is_file())
                     destination = builder.build_pack(pack, directories, builder.ROOT,
                                                      output, None, metadata)
                     with zipfile.ZipFile(destination) as archive:
@@ -95,15 +99,11 @@ class BuildPacksTest(unittest.TestCase):
                         self.assertFalse(required - names, sorted(required - names))
                         self.assertFalse(skipped & names, sorted(skipped & names))
                         prefix = destination.stem + "/"
-                        self.assertEqual(len(names), 300)
+                        self.assertEqual(len(names), 298)
                         self.assertFalse(any(name.endswith(".lua") for name in archive.namelist()))
                         self.assertEqual(len(archive.namelist()), len(set(archive.namelist())))
                         for name, path in sources.items():
                             self.assertEqual(archive.read(prefix + name), path.read_bytes())
-                        for target, source in builder.ALIASES.items():
-                            if target + ".svg" not in sources and source in names:
-                                self.assertEqual(archive.read(prefix + target + ".svg"),
-                                                 archive.read(prefix + source + ".svg"))
                         self.assertEqual(json.loads(archive.read(prefix + "pack.json")), metadata)
                         self.assertFalse({"reading_progress", "zen_mode", "series", "instapaper"}
                                          & names)
@@ -115,6 +115,39 @@ class BuildPacksTest(unittest.TestCase):
                                          dict(metadata, version="2.3.4"))
                         self.assertEqual({Path(name).stem for name in archive.namelist()
                                           if name.endswith((".svg", ".png"))}, names)
+
+    def test_grouped_pack_builds_directly_and_keeps_explicit_alias_artwork(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            pack, output = root / "Grouped", root / "output"
+            files = {
+                "navbar/tab_books.svg": SVG,
+                "controls/quick_search.svg": SVG,
+                "koreader/appbar.search.svg": SVG.replace(b"48", b"24"),
+                "koreader/book_open.svg": SVG,
+                "koreader/appbar.textsize.svg": SVG,
+                "navbar/tab_left.svg": SVG,
+                "navbar/tab_right.svg": SVG,
+                "zenpm/packages.svg": SVG,
+            }
+            for name, data in files.items():
+                path = pack / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(data)
+            (pack / "pack.json").write_text(json.dumps({
+                "schema_version": 1, "id": "zen-grouped", "name": "Grouped for ZenOS",
+            }))
+            for source in (root, pack):
+                with self.subTest(source=source):
+                    self.assertEqual(list(builder.pack_sources(source, output)), [(pack, [pack])])
+                    with patch("sys.argv", ["build-zen-packs.py", str(source),
+                                            "--output", str(output)]):
+                        builder.main()
+                    with zipfile.ZipFile(output / "zen-grouped.zip") as archive:
+                        self.assertTrue(all(len(Path(name).parts) == 2
+                                            for name in archive.namelist()))
+                        for name, data in files.items():
+                            self.assertEqual(archive.read("zen-grouped/" + Path(name).name), data)
 
     def test_color_metadata_survives_repository_and_direct_builds(self):
         with tempfile.TemporaryDirectory() as temporary:

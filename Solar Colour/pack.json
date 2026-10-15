@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "zen-solar-colour",
   "name": "Solar Colour for ZenOS",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "480 Design; adapted by pxlflux; packaged by xZenLabs",
   "color": true
 }

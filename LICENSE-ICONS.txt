@@ -12,7 +12,7 @@ icons where the Solar set did not have a suitable icon:
 https://github.com/pxlflux/solariconpack.koplugin
 
 Packaged for ZenOS by xZenLabs. The ZenOS packs preserve the original SVG
-artwork, adapt additional Solar designs, and generate ZenOS lookup aliases during the build:
+artwork, adapt additional Solar designs, and include ZenOS lookup aliases as source SVGs:
 https://github.com/xZenLabs/solariconpack.koplugin
 
 Additional artwork adapted by xZenLabs from the official Solar Bold SVGs at
@@ -95,10 +95,10 @@ Menu Dots and Tablet are also rotated 90 degrees to match their ZenOS controls.
 
 library.svg is pxlflux's adapted bookshelf.svg, renamed for ZenOS's Library.
 tab_series.svg uses the same book paths rotated -90 degrees into a horizontal stack.
-The KOReader icon folders retain their original filenames and artwork.
-The Python builder copies these unchanged and generates additional lookup aliases
-as regular SVG files sharing the corresponding artwork without further
-modifications. No scripts or filename mapping are needed at runtime.
+All original KOReader filenames and artwork are retained in the grouped source folders.
+Additional lookup aliases are regular source SVGs sharing the corresponding artwork
+without further modifications. The Python builder copies these unchanged into a flat
+pack folder. No scripts or filename mapping are needed at runtime.
 ZenPM's bundled SVG names and inline menu names are included as lookup aliases;
 its frontend must resolve the selected ZenOS icon pack to display them.
 

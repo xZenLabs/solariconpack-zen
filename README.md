@@ -14,7 +14,7 @@ Modern, rounded replacement icons for [ZenOS](https://github.com/xZenLabs/zen-os
 
 ## What's included
 
-Each built pack includes 300 SVG files named for ZenOS, KOReader, and ZenPM's icon lookups. The KOReader icon folders retain all 102 original filenames and drawings in each style. Python generates additional ZenOS and ZenPM lookup aliases during the build. Matching grids and line weights keep the artwork consistent across the three interfaces. Missing icons use the bundled artwork.
+Each style contains 298 SVG files named for ZenOS, KOReader, and ZenPM's exact icon lookups, including all 102 original KOReader filenames and drawings. Every lookup is an editable source file, including names previously generated as aliases during the build. Matching grids and line weights keep the artwork consistent across the three interfaces. Missing icons use the bundled artwork.
 
 | Pack | Style | Made for | Release asset |
 |---|---|---|---|
@@ -78,15 +78,47 @@ After switching away from a pack, remove it through ZenPM if ZenPM installed it,
 
 For your own pack, start with the [Zen icon pack template](https://github.com/xZenLabs/icon-pack-template).
 
+### Source layout
+
+Each style keeps category folders directly beside `pack.json`.
+Categories without replacement artwork can be absent:
+
+```text
+<Style>/
+├── pack.json
+├── navbar/
+├── controls/                 # Quick settings and Zen controls
+├── launcher/
+├── zenpm/                    # Includes verification shields
+├── lookup/
+├── menus/                    # Zen menu entry points
+├── reader/                   # Page browser: TOC, vocabulary, view modes
+├── device/
+└── koreader/                 # Stock KOReader icons, including plus/info
+```
+
+[ICON-LIST.md](ICON-LIST.md) lists the filenames by category. Page-browser TOC, vocabulary-builder,
+and view icons belong in `reader/`. All stock KOReader icons, including `appbar.*`,
+the Aa font button, plus/info, bookmarks, and `book_open`, belong in `koreader/`. Quick settings
+belong in `controls/`; `tab_left` and `tab_right` belong in `navbar/`.
+Shared lookup names appear only once per style;
+different lookup names can be edited independently.
+
+Legacy SimpleUI `qa_group` and `qa_plugin` files are omitted. ZenPM uses
+`plugin.svg`; its verification shields belong in `zenpm/`.
+The builder flattens the categories into the pack root in release ZIPs,
+so installed lookup names and artwork remain unchanged apart from the two
+obsolete SimpleUI names. Missing icons keep their normal bundled fallbacks.
+
+### Build and validate
+
 Each pack manifest includes `"color": true` for colour artwork or
 `"color": false` for monochrome artwork. Per-style values are retained in the
 release ZIPs when building the whole repository.
 
-The KOReader icon folders retain their original lookup names and artwork;
-additional source SVGs use ZenOS lookup names. Filename conversion and alias
-generation happens in `scripts/build-zen-packs.py`;
-the packs have no Lua scripts. The builder gathers each style's three icon
-folders, validates the assets, and creates both release ZIPs. Install its
+The source SVGs already use their runtime lookup names; the packs have no Lua
+scripts. The builder recursively gathers each style's category folders,
+validates the assets, and creates both release ZIPs. Install its
 dependency, then run it with Python 3:
 
 ```sh
@@ -96,6 +128,16 @@ python3 -m pip install -r scripts/requirements.txt
 python3 scripts/build-zen-packs.py
 ```
 
+Regenerate the Navbar and utility contact sheets in `dist/` with one icon per
+cell and exact lookup names:
+
+```sh
+python3 scripts/build-previews.py
+```
+
+Preview rendering requires `rsvg-convert` from librsvg. It renders the existing
+SVG artwork directly; the pack ZIP build does not need this tool.
+
 To build just one style, pass `"Solar Colour"` or `"Solar Mono"` as the source.
 The builder's SimpleUI mappings remain available for other extracted packs:
 
@@ -104,9 +146,9 @@ python3 scripts/build-zen-packs.py /path/to/NightOwl --output dist --version 1.0
 python3 -m unittest discover -s scripts -p 'test_*.py'
 ```
 
-Point it at a flat pack folder, a folder containing several packs, or a repository
-with `Pack Icons`, `KOReader Icons`, and supplementary icon folders. Extract ZIP
-inputs first. Optional `pack.lua` metadata and filename mappings are read as
+Point it at a pack with category folders beside `pack.json`, a flat pack folder, a folder
+containing several packs, or a legacy repository with `Pack Icons`, `KOReader Icons`, and supplementary icon
+folders. Extract ZIP inputs first. Optional `pack.lua` metadata and filename mappings are read as
 literal quoted strings without running Lua; computed Lua values are unsupported.
 Without Lua metadata, standard `sui_*` SVG/PNG filenames are translated to ZenOS
 names. Existing canonical icons take priority, and partial packs are supported.
@@ -145,7 +187,7 @@ creates the tag on the triggering commit and publishes the generated ZenOS ZIPs.
 
 - **Original repository:** [pxlflux/solariconpack.koplugin](https://github.com/pxlflux/solariconpack.koplugin). pxlflux adapted the Solar artwork for KOReader, recoloured the Colour version, refined the Mono outlines, and drew additional icons.
 - **Original icon set:** [Solar Icon Set](https://www.figma.com/community/file/1166831539721848736) by **480 Design**, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- **ZenOS packaging:** [ZenLabs](https://github.com/xZenLabs) preserves the original SVG artwork, adapts additional Solar designs to both pack styles, and generates ZenOS lookup aliases during the Python build.
+- **ZenOS packaging:** [ZenLabs](https://github.com/xZenLabs) preserves the original SVG artwork, adapts additional Solar designs to both pack styles, and supplies grouped source SVGs using ZenOS and ZenPM lookup names.
 - The icons remain under **CC BY 4.0**. See [LICENSE](LICENSE) and [LICENSE-ICONS.txt](LICENSE-ICONS.txt).
 
 ## Support and funding
