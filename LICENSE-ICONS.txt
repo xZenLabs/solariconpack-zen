@@ -102,5 +102,76 @@ pack folder. No scripts or filename mapping are needed at runtime.
 ZenPM's bundled SVG names and inline menu names are included as lookup aliases;
 its frontend must resolve the selected ZenOS icon pack to display them.
 
+ZenOS settings icons in settings/ adapt these Solar Bold icons from Iconify's
+Solar set at revision c455eb6232ac0fa657550afb512af55fb8237ed6, using the same
+19-unit centering, palette and outline weights as the additions above:
+https://github.com/iconify/icon-sets/blob/c455eb6232ac0fa657550afb512af55fb8237ed6/json/solar.json
+
+  settings_blur.svg                              radial-blur-bold
+  settings_book_check.svg                        book-bookmark-bold
+  settings_book_cog_outline.svg                  notebook-bold
+  settings_brush.svg                             paint-brush-bold
+  settings_content_save.svg                      diskette-bold
+  settings_cursor_move.svg                       move-to-folder-bold
+  settings_division.svg                          align-vertical-spacing-bold
+  settings_dock_bottom.svg                       panel-bottom-open-bold
+  settings_drag_horizontal_variant.svg           window-frame-bold
+  settings_draw_pen.svg                          pen-2-bold
+  settings_eye_off.svg                           eye-closed-bold
+  settings_file_tree.svg                         folder-path-connect-bold
+  settings_folder_home_outline.svg               home-2-bold
+  settings_folder_plus_outline.svg               add-folder-bold
+  settings_format_horizontal_align_center.svg    align-horizontal-center-bold
+  settings_format_underline.svg                  text-underline-bold
+  settings_gesture_double_tap.svg                cursor-bold
+  settings_gesture_swipe_down.svg                square-arrow-down-bold
+  settings_gesture_swipe_up.svg                  square-arrow-up-bold
+  settings_keyboard.svg                          keyboard-bold
+  settings_memory.svg                            ssd-square-bold
+  settings_pan_horizontal.svg                    move-horizontal-bold
+  settings_reflect_horizontal.svg                transfer-horizontal-bold
+  settings_sort_alphabetical_variant.svg         sort-alphabetically-bold
+  settings_table_row.svg                         table-rows-split-bold
+  settings_tag.svg                               tag-bold
+  settings_widgets.svg                           widget-4-bold
+
+The remaining settings/ files are unmodified copies of this pack's existing artwork.
+
 Retain this attribution when redistributing or adapting the icons.
 Not affiliated with or endorsed by 480 Design, KOReader, or SimpleUI.
+
+Upstream supplementary artwork refreshed from pxlflux v1.1.0 at revision
+8182c4e6e89c7e74e02e5fa566774a3441fe299a:
+https://github.com/pxlflux/solariconpack.koplugin/tree/8182c4e6e89c7e74e02e5fa566774a3441fe299a
+
+  controls/quick_chess.svg <- Supplementary Icons/chess.svg (both styles)
+  controls/quick_notion.svg <- Supplementary Icons/notion.svg (both styles)
+  controls/quick_quickrss.svg <- Supplementary Icons/rss.svg (both styles)
+  controls/quick_bluetooth.svg <- Supplementary Icons/bluetooth.svg (both styles)
+  controls/quick_restart.svg <- Supplementary Icons/restart.svg (both styles)
+  controls/quick_lockdown.svg <- Supplementary Icons/lock.svg (both styles)
+  controls/quick_cloud.svg <- Supplementary Icons/cloud_storage.svg (both styles)
+  launcher/app_launcher.svg <- Supplementary Icons/launcher.svg (both styles)
+  launcher/calculator.svg <- Supplementary Icons/calculator.svg (both styles)
+  launcher/paint_palette.svg <- Supplementary Icons/appearance.svg (both styles)
+  launcher/trash.svg <- Supplementary Icons/bin.svg (both styles)
+  launcher/annotations_viewer.svg <- Supplementary Icons/annotations_viewer.svg (both styles)
+  launcher/terminal.svg <- Supplementary Icons/terminal.svg (both styles)
+  launcher/folder_open.svg <- Supplementary Icons/folder_open.svg (both styles)
+  launcher/gallery.svg <- Supplementary Icons/gallery.svg (both styles)
+  device/backup.svg <- Supplementary Icons/backup.svg (both styles)
+  device/restart.svg <- Supplementary Icons/restart.svg (both styles)
+  device/usb.svg <- Supplementary Icons/usb_storage.svg (both styles)
+  lookup/lookup_dictionary.svg <- Supplementary Icons/dictionary.svg (both styles)
+  lookup/lookup.dictionary.svg <- Supplementary Icons/dictionary.svg (both styles)
+  lookup/lookup.translate.svg <- Supplementary Icons/translate.svg (both styles)
+  lookup/lookup.wikipedia.svg <- Supplementary Icons/wikipedia.svg (both styles)
+  reader/tab_vocab.svg <- Supplementary Icons/vocabulary_builder.svg (both styles)
+
+coverflow.svg is rotated 90 degrees clockwise around (12, 12).
+The new reader pin, footnote, and return controls use pin-linear,
+document-text-linear, and undo-left-linear from the Solar Icon Set,
+distributed by Iconify at revision c455eb6232ac0fa657550afb512af55fb8237ed6:
+https://github.com/iconify/icon-sets/blob/c455eb6232ac0fa657550afb512af55fb8237ed6/json/solar.json
+Strokes match the pack (0.75 Colour, 1.0 Mono); Colour pins and pages
+have pastel blue fills. return_old.svg retains the same return artwork.

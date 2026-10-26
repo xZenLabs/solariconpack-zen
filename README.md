@@ -14,7 +14,7 @@ Modern, rounded replacement icons for [ZenOS](https://github.com/xZenLabs/zen-os
 
 ## What's included
 
-Each style contains 298 SVG files named for ZenOS, KOReader, and ZenPM's exact icon lookups, including all 102 original KOReader filenames and drawings. Every lookup is an editable source file, including names previously generated as aliases during the build. Matching grids and line weights keep the artwork consistent across the three interfaces. Missing icons use the bundled artwork.
+Each style contains 387 SVG files named for ZenOS, KOReader, and ZenPM's exact icon lookups, including all 102 original KOReader filenames and drawings. Every lookup is an editable source file, including names previously generated as aliases during the build. Matching grids and line weights keep the artwork consistent across the three interfaces. Missing icons use the bundled artwork.
 
 | Pack | Style | Made for | Release asset |
 |---|---|---|---|
@@ -46,7 +46,13 @@ for these replacements to appear; older frontends that load bundled icons and
 font glyphs directly keep their original artwork. Downloaded package logos and
 previews retain their own artwork.
 
-Chess, Connections, Notion, RSS, and unmatched lookup actions keep the bundled artwork. The additions come from the [official Solar Icon Set](https://github.com/480-Design/Solar-Icon-Set/tree/44017167688b49109d88ae6a98979b23d8950db0/icons/SVG/Bold); source names and adaptation details are recorded in [icon attribution](LICENSE-ICONS.txt).
+Chess, Notion, and RSS now use pxlflux v1.1.0 artwork, along with refreshed launcher,
+dictionary, palette, trash, and utility icons. Connections and unmatched lookup
+actions keep the bundled artwork. The carousel icon is rotated 90 degrees clockwise. The additions come from the [official Solar Icon Set](https://github.com/480-Design/Solar-Icon-Set/tree/44017167688b49109d88ae6a98979b23d8950db0/icons/SVG/Bold); source names and adaptation details are recorded in [icon attribution](LICENSE-ICONS.txt).
+
+Reader controls include `pin.svg`, `footnote.svg`, `return.svg`, and the
+compatible `return_old.svg` lookup, alongside the highlight style, color,
+delete, filter, and sort icons.
 
 ## Install with ZenPM
 
@@ -94,6 +100,7 @@ Categories without replacement artwork can be absent:
 ├── menus/                    # Zen menu entry points
 ├── reader/                   # Page browser: TOC, vocabulary, view modes
 ├── device/
+├── settings/                 # Zen settings menu rows
 └── koreader/                 # Stock KOReader icons, including plus/info
 ```
 

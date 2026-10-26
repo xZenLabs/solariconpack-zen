@@ -41,6 +41,7 @@ class BuildPacksTest(unittest.TestCase):
             wifi.secure.50 wifi.secure.75 zoom.column zoom.content zoom.manual zoom.page zoom.row
         """.split())
         required = set("""
+            edit filter sort font paint_palette trash footnote pin return return_old
             app_launcher app_menu book_open calendar cloud restart sleep quicksettings
             archive atom avatar battery battery_full battery_half battery_low battery_charging
             blocks book_closed bookshelf calculator close close_light compass coverflow cpu database
@@ -49,6 +50,7 @@ class BuildPacksTest(unittest.TestCase):
             lookup.vocab_remove lookup_vocab_remove more_vertical network share skip_left
             skip_right speed sun tablet terminal timer toc usb warmth
             appbar.menu appbar.search book.opened home library star.empty
+            quick_chess quick_notion quick_quickrss
             quick_aa quick_battery quick_bluetooth quick_calibre quick_calibre_dark
             quick_cloud quick_crossword quick_exit quick_filebrowser quick_incognito
             quick_localsend quick_lockdown quick_nightmode quick_opds quick_puzzle
@@ -60,7 +62,7 @@ class BuildPacksTest(unittest.TestCase):
             appbar.navigation appbar.typeset tab_news tab_right tab_series tab_stats
             tab_tags tab_to_be_read tab_tools tab_translate tab_vocab
         """.split())
-        skipped = {"quick_chess", "quick_connections", "quick_notion", "quick_quickrss",
+        skipped = {"quick_connections",
                    "tab_spacer"}
         # ZenPM's 39 bundled SVG names and 33 inline menu names (63 unique lookups).
         required.update("""
@@ -84,7 +86,7 @@ class BuildPacksTest(unittest.TestCase):
                     metadata = json.loads((pack / "pack.json").read_text())
                     self.assertFalse(list(pack.rglob("pack.lua")))
                     self.assertEqual(len(paths), len(sources))
-                    self.assertEqual(len(sources), 298)
+                    self.assertEqual(len(sources), 387)
                     self.assertEqual({path.parent.parent for path in paths}, {pack})
                     self.assertEqual({path.stem for path in (pack / "koreader").glob("*.svg")},
                                      koreader_names | {"book_open"})
@@ -99,7 +101,7 @@ class BuildPacksTest(unittest.TestCase):
                         self.assertFalse(required - names, sorted(required - names))
                         self.assertFalse(skipped & names, sorted(skipped & names))
                         prefix = destination.stem + "/"
-                        self.assertEqual(len(names), 298)
+                        self.assertEqual(len(names), 387)
                         self.assertFalse(any(name.endswith(".lua") for name in archive.namelist()))
                         self.assertEqual(len(archive.namelist()), len(set(archive.namelist())))
                         for name, path in sources.items():

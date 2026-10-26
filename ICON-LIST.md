@@ -15,6 +15,7 @@ Release ZIPs flatten the categories into the pack root.
 | [menus](#menus) | Zen menu entry points. |
 | [reader](#reader) | Page-browser TOC, vocabulary builder, and single/carousel/grid view modes. |
 | [device](#device) | Zen battery, lighting, power, hardware, and system indicators. |
+| [settings](#settings) | ZenOS settings menu rows, mirroring ZenOS's bundled `settings_*` lookups. |
 | [koreader](#koreader) | Stock KOReader icons, including appbar, plus/info, bookmarks, and book_open. |
 
 ## navbar
@@ -67,6 +68,7 @@ Quick settings, shared Zen buttons, and playback controls.
 | `quick_bluetooth.svg` | [SVG](Solar%20Colour/controls/quick_bluetooth.svg) | [SVG](Solar%20Mono/controls/quick_bluetooth.svg) |
 | `quick_calibre.svg` | [SVG](Solar%20Colour/controls/quick_calibre.svg) | [SVG](Solar%20Mono/controls/quick_calibre.svg) |
 | `quick_calibre_dark.svg` | [SVG](Solar%20Colour/controls/quick_calibre_dark.svg) | [SVG](Solar%20Mono/controls/quick_calibre_dark.svg) |
+| `quick_chess.svg` | [SVG](Solar%20Colour/controls/quick_chess.svg) | [SVG](Solar%20Mono/controls/quick_chess.svg) |
 | `quick_cloud.svg` | [SVG](Solar%20Colour/controls/quick_cloud.svg) | [SVG](Solar%20Mono/controls/quick_cloud.svg) |
 | `quick_crossword.svg` | [SVG](Solar%20Colour/controls/quick_crossword.svg) | [SVG](Solar%20Mono/controls/quick_crossword.svg) |
 | `quick_exit.svg` | [SVG](Solar%20Colour/controls/quick_exit.svg) | [SVG](Solar%20Mono/controls/quick_exit.svg) |
@@ -75,8 +77,10 @@ Quick settings, shared Zen buttons, and playback controls.
 | `quick_localsend.svg` | [SVG](Solar%20Colour/controls/quick_localsend.svg) | [SVG](Solar%20Mono/controls/quick_localsend.svg) |
 | `quick_lockdown.svg` | [SVG](Solar%20Colour/controls/quick_lockdown.svg) | [SVG](Solar%20Mono/controls/quick_lockdown.svg) |
 | `quick_nightmode.svg` | [SVG](Solar%20Colour/controls/quick_nightmode.svg) | [SVG](Solar%20Mono/controls/quick_nightmode.svg) |
+| `quick_notion.svg` | [SVG](Solar%20Colour/controls/quick_notion.svg) | [SVG](Solar%20Mono/controls/quick_notion.svg) |
 | `quick_opds.svg` | [SVG](Solar%20Colour/controls/quick_opds.svg) | [SVG](Solar%20Mono/controls/quick_opds.svg) |
 | `quick_puzzle.svg` | [SVG](Solar%20Colour/controls/quick_puzzle.svg) | [SVG](Solar%20Mono/controls/quick_puzzle.svg) |
+| `quick_quickrss.svg` | [SVG](Solar%20Colour/controls/quick_quickrss.svg) | [SVG](Solar%20Mono/controls/quick_quickrss.svg) |
 | `quick_restart.svg` | [SVG](Solar%20Colour/controls/quick_restart.svg) | [SVG](Solar%20Mono/controls/quick_restart.svg) |
 | `quick_rotate.svg` | [SVG](Solar%20Colour/controls/quick_rotate.svg) | [SVG](Solar%20Mono/controls/quick_rotate.svg) |
 | `quick_screenshot.svg` | [SVG](Solar%20Colour/controls/quick_screenshot.svg) | [SVG](Solar%20Mono/controls/quick_screenshot.svg) |
@@ -210,8 +214,10 @@ Highlight, dictionary, vocabulary, search, and AI lookup actions.
 | `lookup.dictionary.svg` | [SVG](Solar%20Colour/lookup/lookup.dictionary.svg) | [SVG](Solar%20Mono/lookup/lookup.dictionary.svg) |
 | `lookup.highlight.svg` | [SVG](Solar%20Colour/lookup/lookup.highlight.svg) | [SVG](Solar%20Mono/lookup/lookup.highlight.svg) |
 | `lookup.search.svg` | [SVG](Solar%20Colour/lookup/lookup.search.svg) | [SVG](Solar%20Mono/lookup/lookup.search.svg) |
+| `lookup.translate.svg` | [SVG](Solar%20Colour/lookup/lookup.translate.svg) | [SVG](Solar%20Mono/lookup/lookup.translate.svg) |
 | `lookup.vocab.svg` | [SVG](Solar%20Colour/lookup/lookup.vocab.svg) | [SVG](Solar%20Mono/lookup/lookup.vocab.svg) |
 | `lookup.vocab_remove.svg` | [SVG](Solar%20Colour/lookup/lookup.vocab_remove.svg) | [SVG](Solar%20Mono/lookup/lookup.vocab_remove.svg) |
+| `lookup.wikipedia.svg` | [SVG](Solar%20Colour/lookup/lookup.wikipedia.svg) | [SVG](Solar%20Mono/lookup/lookup.wikipedia.svg) |
 | `lookup_ai.svg` | [SVG](Solar%20Colour/lookup/lookup_ai.svg) | [SVG](Solar%20Mono/lookup/lookup_ai.svg) |
 | `lookup_dictionary.svg` | [SVG](Solar%20Colour/lookup/lookup_dictionary.svg) | [SVG](Solar%20Mono/lookup/lookup_dictionary.svg) |
 | `lookup_highlight.svg` | [SVG](Solar%20Colour/lookup/lookup_highlight.svg) | [SVG](Solar%20Mono/lookup/lookup_highlight.svg) |
@@ -238,8 +244,12 @@ from [koreader](#koreader).
 | Lookup filename | Solar Colour | Solar Mono |
 |---|---|---|
 | `coverflow.svg` | [SVG](Solar%20Colour/reader/coverflow.svg) | [SVG](Solar%20Mono/reader/coverflow.svg) |
+| `footnote.svg` | [SVG](Solar%20Colour/reader/footnote.svg) | [SVG](Solar%20Mono/reader/footnote.svg) |
 | `grid.svg` | [SVG](Solar%20Colour/reader/grid.svg) | [SVG](Solar%20Mono/reader/grid.svg) |
 | `grid_slide.svg` | [SVG](Solar%20Colour/reader/grid_slide.svg) | [SVG](Solar%20Mono/reader/grid_slide.svg) |
+| `pin.svg` | [SVG](Solar%20Colour/reader/pin.svg) | [SVG](Solar%20Mono/reader/pin.svg) |
+| `return.svg` | [SVG](Solar%20Colour/reader/return.svg) | [SVG](Solar%20Mono/reader/return.svg) |
+| `return_old.svg` | [SVG](Solar%20Colour/reader/return_old.svg) | [SVG](Solar%20Mono/reader/return_old.svg) |
 | `tab_vocab.svg` | [SVG](Solar%20Colour/reader/tab_vocab.svg) | [SVG](Solar%20Mono/reader/tab_vocab.svg) |
 | `toc.svg` | [SVG](Solar%20Colour/reader/toc.svg) | [SVG](Solar%20Mono/reader/toc.svg) |
 
@@ -270,6 +280,93 @@ Zen battery, lighting, power, hardware, and system indicators.
 | `timer.svg` | [SVG](Solar%20Colour/device/timer.svg) | [SVG](Solar%20Mono/device/timer.svg) |
 | `usb.svg` | [SVG](Solar%20Colour/device/usb.svg) | [SVG](Solar%20Mono/device/usb.svg) |
 | `warmth.svg` | [SVG](Solar%20Colour/device/warmth.svg) | [SVG](Solar%20Mono/device/warmth.svg) |
+
+## settings
+
+ZenOS settings menu rows, mirroring ZenOS's bundled `settings_*` lookups.
+
+| Lookup filename | Solar Colour | Solar Mono |
+|---|---|---|
+| `settings_archive_outline.svg` | [SVG](Solar%20Colour/settings/settings_archive_outline.svg) | [SVG](Solar%20Mono/settings/settings_archive_outline.svg) |
+| `settings_arrow_up_circle_outline.svg` | [SVG](Solar%20Colour/settings/settings_arrow_up_circle_outline.svg) | [SVG](Solar%20Mono/settings/settings_arrow_up_circle_outline.svg) |
+| `settings_backup_restore.svg` | [SVG](Solar%20Colour/settings/settings_backup_restore.svg) | [SVG](Solar%20Mono/settings/settings_backup_restore.svg) |
+| `settings_battery_70.svg` | [SVG](Solar%20Colour/settings/settings_battery_70.svg) | [SVG](Solar%20Mono/settings/settings_battery_70.svg) |
+| `settings_bluetooth.svg` | [SVG](Solar%20Colour/settings/settings_bluetooth.svg) | [SVG](Solar%20Mono/settings/settings_bluetooth.svg) |
+| `settings_blur.svg` | [SVG](Solar%20Colour/settings/settings_blur.svg) | [SVG](Solar%20Mono/settings/settings_blur.svg) |
+| `settings_book_check.svg` | [SVG](Solar%20Colour/settings/settings_book_check.svg) | [SVG](Solar%20Mono/settings/settings_book_check.svg) |
+| `settings_book_cog_outline.svg` | [SVG](Solar%20Colour/settings/settings_book_cog_outline.svg) | [SVG](Solar%20Mono/settings/settings_book_cog_outline.svg) |
+| `settings_book_multiple_outline.svg` | [SVG](Solar%20Colour/settings/settings_book_multiple_outline.svg) | [SVG](Solar%20Mono/settings/settings_book_multiple_outline.svg) |
+| `settings_book_open_variant.svg` | [SVG](Solar%20Colour/settings/settings_book_open_variant.svg) | [SVG](Solar%20Mono/settings/settings_book_open_variant.svg) |
+| `settings_bookshelf.svg` | [SVG](Solar%20Colour/settings/settings_bookshelf.svg) | [SVG](Solar%20Mono/settings/settings_bookshelf.svg) |
+| `settings_brush.svg` | [SVG](Solar%20Colour/settings/settings_brush.svg) | [SVG](Solar%20Mono/settings/settings_brush.svg) |
+| `settings_calendar_month_outline.svg` | [SVG](Solar%20Colour/settings/settings_calendar_month_outline.svg) | [SVG](Solar%20Mono/settings/settings_calendar_month_outline.svg) |
+| `settings_chart_line.svg` | [SVG](Solar%20Colour/settings/settings_chart_line.svg) | [SVG](Solar%20Mono/settings/settings_chart_line.svg) |
+| `settings_chip.svg` | [SVG](Solar%20Colour/settings/settings_chip.svg) | [SVG](Solar%20Mono/settings/settings_chip.svg) |
+| `settings_clipboard_play_outline.svg` | [SVG](Solar%20Colour/settings/settings_clipboard_play_outline.svg) | [SVG](Solar%20Mono/settings/settings_clipboard_play_outline.svg) |
+| `settings_clock_outline.svg` | [SVG](Solar%20Colour/settings/settings_clock_outline.svg) | [SVG](Solar%20Mono/settings/settings_clock_outline.svg) |
+| `settings_cloud_download_outline.svg` | [SVG](Solar%20Colour/settings/settings_cloud_download_outline.svg) | [SVG](Solar%20Mono/settings/settings_cloud_download_outline.svg) |
+| `settings_cog.svg` | [SVG](Solar%20Colour/settings/settings_cog.svg) | [SVG](Solar%20Mono/settings/settings_cog.svg) |
+| `settings_content_save.svg` | [SVG](Solar%20Colour/settings/settings_content_save.svg) | [SVG](Solar%20Mono/settings/settings_content_save.svg) |
+| `settings_cursor_move.svg` | [SVG](Solar%20Colour/settings/settings_cursor_move.svg) | [SVG](Solar%20Mono/settings/settings_cursor_move.svg) |
+| `settings_delete_outline.svg` | [SVG](Solar%20Colour/settings/settings_delete_outline.svg) | [SVG](Solar%20Mono/settings/settings_delete_outline.svg) |
+| `settings_division.svg` | [SVG](Solar%20Colour/settings/settings_division.svg) | [SVG](Solar%20Mono/settings/settings_division.svg) |
+| `settings_dock_bottom.svg` | [SVG](Solar%20Colour/settings/settings_dock_bottom.svg) | [SVG](Solar%20Mono/settings/settings_dock_bottom.svg) |
+| `settings_dots_grid.svg` | [SVG](Solar%20Colour/settings/settings_dots_grid.svg) | [SVG](Solar%20Mono/settings/settings_dots_grid.svg) |
+| `settings_drag_horizontal_variant.svg` | [SVG](Solar%20Colour/settings/settings_drag_horizontal_variant.svg) | [SVG](Solar%20Mono/settings/settings_drag_horizontal_variant.svg) |
+| `settings_draw_pen.svg` | [SVG](Solar%20Colour/settings/settings_draw_pen.svg) | [SVG](Solar%20Mono/settings/settings_draw_pen.svg) |
+| `settings_eye_off.svg` | [SVG](Solar%20Colour/settings/settings_eye_off.svg) | [SVG](Solar%20Mono/settings/settings_eye_off.svg) |
+| `settings_file_tree.svg` | [SVG](Solar%20Colour/settings/settings_file_tree.svg) | [SVG](Solar%20Mono/settings/settings_file_tree.svg) |
+| `settings_flash.svg` | [SVG](Solar%20Colour/settings/settings_flash.svg) | [SVG](Solar%20Mono/settings/settings_flash.svg) |
+| `settings_folder_home_outline.svg` | [SVG](Solar%20Colour/settings/settings_folder_home_outline.svg) | [SVG](Solar%20Mono/settings/settings_folder_home_outline.svg) |
+| `settings_folder_open_outline.svg` | [SVG](Solar%20Colour/settings/settings_folder_open_outline.svg) | [SVG](Solar%20Mono/settings/settings_folder_open_outline.svg) |
+| `settings_folder_outline.svg` | [SVG](Solar%20Colour/settings/settings_folder_outline.svg) | [SVG](Solar%20Mono/settings/settings_folder_outline.svg) |
+| `settings_folder_plus_outline.svg` | [SVG](Solar%20Colour/settings/settings_folder_plus_outline.svg) | [SVG](Solar%20Mono/settings/settings_folder_plus_outline.svg) |
+| `settings_format_horizontal_align_center.svg` | [SVG](Solar%20Colour/settings/settings_format_horizontal_align_center.svg) | [SVG](Solar%20Mono/settings/settings_format_horizontal_align_center.svg) |
+| `settings_format_underline.svg` | [SVG](Solar%20Colour/settings/settings_format_underline.svg) | [SVG](Solar%20Mono/settings/settings_format_underline.svg) |
+| `settings_gesture_double_tap.svg` | [SVG](Solar%20Colour/settings/settings_gesture_double_tap.svg) | [SVG](Solar%20Mono/settings/settings_gesture_double_tap.svg) |
+| `settings_gesture_swipe_down.svg` | [SVG](Solar%20Colour/settings/settings_gesture_swipe_down.svg) | [SVG](Solar%20Mono/settings/settings_gesture_swipe_down.svg) |
+| `settings_gesture_swipe_up.svg` | [SVG](Solar%20Colour/settings/settings_gesture_swipe_up.svg) | [SVG](Solar%20Mono/settings/settings_gesture_swipe_up.svg) |
+| `settings_grid_large.svg` | [SVG](Solar%20Colour/settings/settings_grid_large.svg) | [SVG](Solar%20Mono/settings/settings_grid_large.svg) |
+| `settings_harddisk.svg` | [SVG](Solar%20Colour/settings/settings_harddisk.svg) | [SVG](Solar%20Mono/settings/settings_harddisk.svg) |
+| `settings_home_variant.svg` | [SVG](Solar%20Colour/settings/settings_home_variant.svg) | [SVG](Solar%20Mono/settings/settings_home_variant.svg) |
+| `settings_image_filter_hdr.svg` | [SVG](Solar%20Colour/settings/settings_image_filter_hdr.svg) | [SVG](Solar%20Mono/settings/settings_image_filter_hdr.svg) |
+| `settings_image_multiple_outline.svg` | [SVG](Solar%20Colour/settings/settings_image_multiple_outline.svg) | [SVG](Solar%20Mono/settings/settings_image_multiple_outline.svg) |
+| `settings_keyboard.svg` | [SVG](Solar%20Colour/settings/settings_keyboard.svg) | [SVG](Solar%20Mono/settings/settings_keyboard.svg) |
+| `settings_lightning_bolt.svg` | [SVG](Solar%20Colour/settings/settings_lightning_bolt.svg) | [SVG](Solar%20Mono/settings/settings_lightning_bolt.svg) |
+| `settings_lock.svg` | [SVG](Solar%20Colour/settings/settings_lock.svg) | [SVG](Solar%20Mono/settings/settings_lock.svg) |
+| `settings_magnify.svg` | [SVG](Solar%20Colour/settings/settings_magnify.svg) | [SVG](Solar%20Mono/settings/settings_magnify.svg) |
+| `settings_memory.svg` | [SVG](Solar%20Colour/settings/settings_memory.svg) | [SVG](Solar%20Mono/settings/settings_memory.svg) |
+| `settings_menu.svg` | [SVG](Solar%20Colour/settings/settings_menu.svg) | [SVG](Solar%20Mono/settings/settings_menu.svg) |
+| `settings_palette.svg` | [SVG](Solar%20Colour/settings/settings_palette.svg) | [SVG](Solar%20Mono/settings/settings_palette.svg) |
+| `settings_pan_horizontal.svg` | [SVG](Solar%20Colour/settings/settings_pan_horizontal.svg) | [SVG](Solar%20Mono/settings/settings_pan_horizontal.svg) |
+| `settings_play.svg` | [SVG](Solar%20Colour/settings/settings_play.svg) | [SVG](Solar%20Mono/settings/settings_play.svg) |
+| `settings_power_plug.svg` | [SVG](Solar%20Colour/settings/settings_power_plug.svg) | [SVG](Solar%20Mono/settings/settings_power_plug.svg) |
+| `settings_receipt_outline.svg` | [SVG](Solar%20Colour/settings/settings_receipt_outline.svg) | [SVG](Solar%20Mono/settings/settings_receipt_outline.svg) |
+| `settings_reflect_horizontal.svg` | [SVG](Solar%20Colour/settings/settings_reflect_horizontal.svg) | [SVG](Solar%20Mono/settings/settings_reflect_horizontal.svg) |
+| `settings_refresh.svg` | [SVG](Solar%20Colour/settings/settings_refresh.svg) | [SVG](Solar%20Mono/settings/settings_refresh.svg) |
+| `settings_restart.svg` | [SVG](Solar%20Colour/settings/settings_restart.svg) | [SVG](Solar%20Mono/settings/settings_restart.svg) |
+| `settings_sleep.svg` | [SVG](Solar%20Colour/settings/settings_sleep.svg) | [SVG](Solar%20Mono/settings/settings_sleep.svg) |
+| `settings_sort_alphabetical_variant.svg` | [SVG](Solar%20Colour/settings/settings_sort_alphabetical_variant.svg) | [SVG](Solar%20Mono/settings/settings_sort_alphabetical_variant.svg) |
+| `settings_sort_variant.svg` | [SVG](Solar%20Colour/settings/settings_sort_variant.svg) | [SVG](Solar%20Mono/settings/settings_sort_variant.svg) |
+| `settings_square_edit_outline.svg` | [SVG](Solar%20Colour/settings/settings_square_edit_outline.svg) | [SVG](Solar%20Mono/settings/settings_square_edit_outline.svg) |
+| `settings_star.svg` | [SVG](Solar%20Colour/settings/settings_star.svg) | [SVG](Solar%20Mono/settings/settings_star.svg) |
+| `settings_table_row.svg` | [SVG](Solar%20Colour/settings/settings_table_row.svg) | [SVG](Solar%20Mono/settings/settings_table_row.svg) |
+| `settings_tag.svg` | [SVG](Solar%20Colour/settings/settings_tag.svg) | [SVG](Solar%20Mono/settings/settings_tag.svg) |
+| `settings_tag_multiple_outline.svg` | [SVG](Solar%20Colour/settings/settings_tag_multiple_outline.svg) | [SVG](Solar%20Mono/settings/settings_tag_multiple_outline.svg) |
+| `settings_tag_outline.svg` | [SVG](Solar%20Colour/settings/settings_tag_outline.svg) | [SVG](Solar%20Mono/settings/settings_tag_outline.svg) |
+| `settings_thermometer_lines.svg` | [SVG](Solar%20Colour/settings/settings_thermometer_lines.svg) | [SVG](Solar%20Mono/settings/settings_thermometer_lines.svg) |
+| `settings_toggle_switch.svg` | [SVG](Solar%20Colour/settings/settings_toggle_switch.svg) | [SVG](Solar%20Mono/settings/settings_toggle_switch.svg) |
+| `settings_tools.svg` | [SVG](Solar%20Colour/settings/settings_tools.svg) | [SVG](Solar%20Mono/settings/settings_tools.svg) |
+| `settings_translate.svg` | [SVG](Solar%20Colour/settings/settings_translate.svg) | [SVG](Solar%20Mono/settings/settings_translate.svg) |
+| `settings_view_grid_outline.svg` | [SVG](Solar%20Colour/settings/settings_view_grid_outline.svg) | [SVG](Solar%20Mono/settings/settings_view_grid_outline.svg) |
+| `settings_view_list_outline.svg` | [SVG](Solar%20Colour/settings/settings_view_list_outline.svg) | [SVG](Solar%20Mono/settings/settings_view_list_outline.svg) |
+| `settings_view_quilt.svg` | [SVG](Solar%20Colour/settings/settings_view_quilt.svg) | [SVG](Solar%20Mono/settings/settings_view_quilt.svg) |
+| `settings_wallpaper.svg` | [SVG](Solar%20Colour/settings/settings_wallpaper.svg) | [SVG](Solar%20Mono/settings/settings_wallpaper.svg) |
+| `settings_weather_night.svg` | [SVG](Solar%20Colour/settings/settings_weather_night.svg) | [SVG](Solar%20Mono/settings/settings_weather_night.svg) |
+| `settings_weather_sunny.svg` | [SVG](Solar%20Colour/settings/settings_weather_sunny.svg) | [SVG](Solar%20Mono/settings/settings_weather_sunny.svg) |
+| `settings_widgets.svg` | [SVG](Solar%20Colour/settings/settings_widgets.svg) | [SVG](Solar%20Mono/settings/settings_widgets.svg) |
+| `settings_wifi.svg` | [SVG](Solar%20Colour/settings/settings_wifi.svg) | [SVG](Solar%20Mono/settings/settings_wifi.svg) |
+| `view_carousel_outline.svg` | [SVG](Solar%20Colour/settings/view_carousel_outline.svg) | [SVG](Solar%20Mono/settings/view_carousel_outline.svg) |
 
 ## koreader
 

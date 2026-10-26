@@ -250,7 +250,8 @@ def pack_sources(root, output):
                     path.suffix.lower() in (".svg", ".png") for path in child.iterdir()):
                 yield child, [child]
     elif any((root / name).is_dir() for name in (
-            "navbar", "controls", "launcher", "zenpm", "lookup", "menus", "reader", "device", "koreader",
+            "navbar", "controls", "launcher", "zenpm", "lookup", "menus", "reader", "device", "settings",
+            "koreader",
             "icons")) or any(path.suffix.lower() in (".svg", ".png") or
              (path.is_dir() and path.name.startswith("Pack Icons")) for path in root.iterdir()):
         yield root, icon_directories(root)
