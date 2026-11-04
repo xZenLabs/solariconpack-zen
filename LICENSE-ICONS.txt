@@ -175,3 +175,35 @@ distributed by Iconify at revision c455eb6232ac0fa657550afb512af55fb8237ed6:
 https://github.com/iconify/icon-sets/blob/c455eb6232ac0fa657550afb512af55fb8237ed6/json/solar.json
 Strokes match the pack (0.75 Colour, 1.0 Mono); Colour pins and pages
 have pastel blue fills. return_old.svg retains the same return artwork.
+
+Reader-control, page-browser and context-menu lookups added for ZenOS adapt
+these Solar Linear icons from the same Iconify revision, with the strokes
+above; Colour fills closed shapes pastel blue:
+
+  reader/annotations.svg                          notebook-linear
+  reader/document.svg                             file-text-linear
+  reader/page.svg                                 document-text-linear
+  reader/profiles.svg                             tuning-2-linear
+  reader/history.svg                              history-linear
+  reader/zoom_in.svg                              magnifer-zoom-in-linear
+  reader/zoom_out.svg                             magnifer-zoom-out-linear
+  reader/fullscreen.svg                           full-screen-linear
+  reader/fullscreen_exit.svg                      quit-full-screen-linear
+  settings/settings_check.svg                     check-circle-linear
+  settings/settings_content_copy.svg              copy-linear
+  settings/settings_content_cut.svg               scissors-linear
+  settings/settings_content_paste.svg             clipboard-linear
+  settings/settings_dots_horizontal.svg           menu-dots-linear
+  settings/settings_eye_outline.svg               eye-linear
+  settings/settings_file_outline.svg              file-linear
+  settings/settings_format_list_bulleted.svg      list-linear
+  settings/settings_history.svg                   history-linear
+  settings/settings_note_plus_outline.svg         document-add-linear
+  settings/settings_pause.svg                     pause-linear
+  settings/settings_restore.svg                   undo-left-round-linear
+  settings/settings_selection.svg                 square-dashed-linear
+  settings/settings_sync.svg                      refresh-linear
+
+reader/pin_remove.svg and reader/bookmark_remove.svg are this pack's pin and
+bookmark artwork with a diagonal line drawn through them. The remaining new
+files are unmodified copies of this pack's existing artwork.

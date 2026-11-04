@@ -86,7 +86,7 @@ class BuildPacksTest(unittest.TestCase):
                     metadata = json.loads((pack / "pack.json").read_text())
                     self.assertFalse(list(pack.rglob("pack.lua")))
                     self.assertEqual(len(paths), len(sources))
-                    self.assertEqual(len(sources), 387)
+                    self.assertEqual(len(sources), 421)
                     self.assertEqual({path.parent.parent for path in paths}, {pack})
                     self.assertEqual({path.stem for path in (pack / "koreader").glob("*.svg")},
                                      koreader_names | {"book_open"})
@@ -101,7 +101,7 @@ class BuildPacksTest(unittest.TestCase):
                         self.assertFalse(required - names, sorted(required - names))
                         self.assertFalse(skipped & names, sorted(skipped & names))
                         prefix = destination.stem + "/"
-                        self.assertEqual(len(names), 387)
+                        self.assertEqual(len(names), 421)
                         self.assertFalse(any(name.endswith(".lua") for name in archive.namelist()))
                         self.assertEqual(len(archive.namelist()), len(set(archive.namelist())))
                         for name, path in sources.items():
