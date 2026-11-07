@@ -220,3 +220,6 @@ line drawn through it. settings_incognito, settings_chevron_left,
 settings_chevron_right, settings_file_cabinet, settings_book_outline and
 settings_file_document_outline are unmodified copies of this pack's existing
 artwork.
+
+controls/zenfm.svg is an unmodified copy of this pack's
+controls/quick_filebrowser.svg artwork.

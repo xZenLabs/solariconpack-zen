@@ -100,6 +100,7 @@ Quick settings, shared Zen buttons, and playback controls.
 | `skip_right.svg` | [SVG](Solar%20Colour/controls/skip_right.svg) | [SVG](Solar%20Mono/controls/skip_right.svg) |
 | `star.filled.svg` | [SVG](Solar%20Colour/controls/star.filled.svg) | [SVG](Solar%20Mono/controls/star.filled.svg) |
 | `star.svg` | [SVG](Solar%20Colour/controls/star.svg) | [SVG](Solar%20Mono/controls/star.svg) |
+| `zenfm.svg` | [SVG](Solar%20Colour/controls/zenfm.svg) | [SVG](Solar%20Mono/controls/zenfm.svg) |
 
 ## launcher
 
