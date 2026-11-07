@@ -207,3 +207,16 @@ above; Colour fills closed shapes pastel blue:
 reader/pin_remove.svg and reader/bookmark_remove.svg are this pack's pin and
 bookmark artwork with a diagonal line drawn through them. The remaining new
 files are unmodified copies of this pack's existing artwork.
+
+ZenOS context-menu settings lookups adapt these Solar Linear icons from the
+same Iconify revision, with the strokes above; Colour fills the plane pastel
+blue:
+
+  settings/settings_link.svg                      link-linear
+  settings/settings_send.svg                      plain-linear
+
+settings/settings_wifi_off.svg is this pack's Wi-Fi artwork with a diagonal
+line drawn through it. settings_incognito, settings_chevron_left,
+settings_chevron_right, settings_file_cabinet, settings_book_outline and
+settings_file_document_outline are unmodified copies of this pack's existing
+artwork.
