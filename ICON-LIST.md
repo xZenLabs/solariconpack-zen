@@ -114,6 +114,8 @@ App Launcher, plugin shortcuts, and utility artwork for the icon picker.
 | `avatar.svg` | [SVG](Solar%20Colour/launcher/avatar.svg) | [SVG](Solar%20Mono/launcher/avatar.svg) |
 | `blocks.svg` | [SVG](Solar%20Colour/launcher/blocks.svg) | [SVG](Solar%20Mono/launcher/blocks.svg) |
 | `book_closed.svg` | [SVG](Solar%20Colour/launcher/book_closed.svg) | [SVG](Solar%20Mono/launcher/book_closed.svg) |
+| `bookorbit.svg` | [SVG](Solar%20Colour/launcher/bookorbit.svg) | [SVG](Solar%20Mono/launcher/bookorbit.svg) |
+| `bookorbit.tab.svg` | [SVG](Solar%20Colour/launcher/bookorbit.tab.svg) | [SVG](Solar%20Mono/launcher/bookorbit.tab.svg) |
 | `bookshelf.svg` | [SVG](Solar%20Colour/launcher/bookshelf.svg) | [SVG](Solar%20Mono/launcher/bookshelf.svg) |
 | `bug.svg` | [SVG](Solar%20Colour/launcher/bug.svg) | [SVG](Solar%20Mono/launcher/bug.svg) |
 | `calculator.svg` | [SVG](Solar%20Colour/launcher/calculator.svg) | [SVG](Solar%20Mono/launcher/calculator.svg) |

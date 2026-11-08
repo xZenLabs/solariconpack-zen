@@ -223,3 +223,6 @@ artwork.
 
 controls/zenfm.svg is an unmodified copy of this pack's
 controls/quick_filebrowser.svg artwork.
+
+launcher/bookorbit.svg, launcher/bookorbit.tab.svg and launcher/bookshelf.svg are unmodified copies of
+pxlflux's base icons from solariconpack.koplugin v1.2.1.
